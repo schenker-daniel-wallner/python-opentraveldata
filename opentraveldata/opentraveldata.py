@@ -353,12 +353,12 @@ class OpenTravelData():
       (optd_por_file_size, optd_unlc_file_size) = self.fileSizes()
 
       # Validate the size of the main (IATA/ICAO) POR file
-      if 4e7 <= optd_por_file_size <= 5e7:
+      if 4e7 <= optd_por_file_size <= 6e7:
          if self.verbose:
             print(
-               f"[Opentraveldata::validateFileSizes] File size of {self.local_iata_por_filepath} withing range (i.e., 40-50 MB)")
+               f"[Opentraveldata::validateFileSizes] File size of {self.local_iata_por_filepath} withing range (i.e., 40-60 MB)")
       else:
-         err_msg = f"[OpenTravelData::validateFileSizes] File size of {self.local_iata_por_filepath} not within range (expected to be 40-50 MB)"
+         err_msg = f"[OpenTravelData::validateFileSizes] File size of {self.local_iata_por_filepath} not within range (expected to be 40-60 MB)"
          raise OPTDDownloadedFileSizeError(err_msg)
 
       # Validate the size of the OPTD UN/LOCODE POR file
